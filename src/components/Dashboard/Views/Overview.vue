@@ -9,10 +9,11 @@
             </div>
             <div slot="content">
               <p class="card-category">Ilość zleceń</p>
-              <h4 class="card-title">99 szt</h4>
+              <h4 class="card-title"> {{ TotalCounter }}</h4>
             </div>
             <div slot="footer">
-              <i class="fa fa-refresh"></i>Aktualizuj
+              <i class="fa fa-refresh" @click="CountTotal"></i>Aktualizuj
+              
             </div>
           </stats-card>
         </div>
@@ -181,6 +182,7 @@
   import Card from 'src/components/UIComponents/Cards/Card.vue'
   import LTable from 'src/components/UIComponents/Table.vue'
   import Checkbox from 'src/components/UIComponents/Inputs/Checkbox.vue'
+  
 
   export default {
     components: {
@@ -191,7 +193,9 @@
       StatsCard
     },
     data () {
+      
       return {
+        
         editTooltip: 'Edit Task',
         deleteTooltip: 'Remove',
         pieChart: {
@@ -270,7 +274,30 @@
             {title: 'Pawel Lindner    || Laptop Dell Latitude e6440     || Opis : Usterka GPU', checked: false},
             {title: 'Pawel Lindner    || Laptop Dell Latitude e6440     || Opis : Usterka GPU', checked: false}
           ]
-        }
+        },
+        TotalCounter: ''
+      }
+      
+    },
+    
+    methods:{
+      CountTotal() {
+        this.$http.get('data.json')
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+            const TotalNumberArray= [];
+            for (let key in data) {
+              TotalNumberArray.push(data[key]);
+            }
+          this.TotalCounter = TotalNumberArray.length;
+            console.log(TotalNumberArray.length);
+            console.log(TotalCounter);
+            
+            
+        });
+
       }
     }
   }
