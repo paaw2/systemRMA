@@ -59,3 +59,44 @@
 .table-upgrade td:nth-child(3){
     text-align: center;
 }
+.card-wizard {
+    border-radius: 6px;
+  }
+  .card-wizard .nav-pills {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .card-wizard .nav-pills > li > a {
+    text-align: center;
+    border: none;
+    background-color: #9A9A9A;
+    color: #FFFFFF;
+    text-transform: uppercase;
+  }
+  .card-wizard .nav-pills > li > a:hover, .card-wizard .nav-pills > li > a:focus {
+    background-color: #9A9A9A;
+    outline: 0 !important;
+  }
+  .card-wizard .nav-pills > li:first-child > a, .card-wizard .nav-pills > li:last-child > a {
+    border-radius: 0;
+  }
+  .card-wizard .btn-finish {
+    display: none;
+  }
+  .card-wizard .card-header .category {
+    padding: 0px;
+  }
+  .card-wizard .card-content h5 {
+    padding: 20px;
+  }
+  .card-wizard .card-content label.error:not(.form-control) {
+    color: #EB5E28;
+    font-weight: 300;
+    font-size: 0.8em;
+  }
+  .card-wizard .footer {
+    padding-bottom: 25px;
+    padding-top: 25px;
+  }

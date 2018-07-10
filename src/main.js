@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import VueResource from 'vue-resource'
+import VueFormWizard from 'vue-form-wizard'
+import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 
 // LightBootstrap plugin
 import LightBootstrap from './light-bootstrap-main'
@@ -15,7 +17,7 @@ Vue.use(VueResource)
 Vue.http.options.root = 'https://systemrma-e746d.firebaseio.com/data'
 
 Vue.use(LightBootstrap)
-
+Vue.use(VueFormWizard)  
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes
